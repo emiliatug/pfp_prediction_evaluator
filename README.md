@@ -1,5 +1,7 @@
 # Protein Function Prediction ML Evaluation
 
+This project implements supervised ML pipelines for regression tasks using CuML, FLAML, scikit-learn, and Keras to evaluate and improve Lin Score prediction accuracy, focusing on loss optimization and bin-wise error reduction.
+
 ## Step 1: Prepare and Scale Data
 
 ### Generate Cross-Validation Datasets
