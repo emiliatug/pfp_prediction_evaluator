@@ -128,4 +128,12 @@ TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
 ```
 
 
+## Data Availability
+
+Please note that the dataset referenced here is **not located in the same directory** as mentioned above.
+The dataset is available upon request.
+Please contact:
+
+```
+emiliatugol@gmail.com
 ```
