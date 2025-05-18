@@ -2,6 +2,15 @@
 
 This project implements supervised ML pipelines for regression tasks using CuML, FLAML, scikit-learn, and Keras to evaluate and improve Lin Score prediction accuracy, focusing on loss optimization and bin-wise error reduction.
 
+## Environment
+
+Please activate the environment before starting:
+
+```bash
+pip install requirements.txt
+```
+
+---
 ## Step 1: Prepare and Scale Data
 
 ### Generate Cross-Validation Datasets
