@@ -127,8 +127,5 @@ TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
 ./Scripts_bash/run_global2_NeuralNetwork_epoch_opt_no_early_stop_weighted_loss2.sh
 ```
 
-#### Manual Tuning (In Progress)
 
-```bash
-./Scripts_bash/run_global2_part4NeuralNetwork_manually_tuned_unweighted_loss1.sh > Log_files/NN/stdout_stderr/global2_manually_tuned_unweighted_loss1_stdout.log 2> Log_files/NN/stdout_stderr/global2_manually_tuned_unweighted_loss1_stderr.log
 ```
