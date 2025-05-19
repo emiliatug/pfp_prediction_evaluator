@@ -26,7 +26,7 @@ input4="./Data/val/fold_0_final_val_df.pkl,\
 ./Data/val/fold_2_final_val_df.pkl,\
 ./Data/val/fold_3_final_val_df.pkl,\
 ./Data/val/fold_4_final_val_df.pkl"
-input10="./Log_files/NN, global2_small_search_weighted_loss2,./Regression/Results/Final_Results/NN/small_search_weighted, weighted_loss, small_search,/media/deep/DATA/PycharmProjects/Summer2024/FF_editing_transfer/E_Tugolukov/Global_Part2_ML_not_DL/Regression/Results/IntermediateData/NN/manual_tuning/small_search_weighted/models" 
+input10="./Log_files/NN, global2_small_search_weighted_loss2,./Regression/Results/Final_Results/NN/small_search_weighted, weighted_loss, small_search,./ResultsIntermediateData/NN/manual_tuning/small_search_weighted/models"
 ## 2nd Run variables
 # Train Data: Folds structured as (fold0A, fold0B, fold1A, fold1B, ..., fold5A, fold5B)
 input11="./Data/train_val/fold_0_final_train_val_B_df.pkl,\

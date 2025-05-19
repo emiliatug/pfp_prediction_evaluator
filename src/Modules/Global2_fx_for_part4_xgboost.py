@@ -642,7 +642,7 @@ def cv_per_model_rf(
     for fold_idx in range(num_folds):
         if dict_assist == "Part4_of_5":
             dict_to_add = pd.read_pickle(
-                '/media/deep/DATA/PycharmProjects/Summer2024/FF_editing_transfer/E_Tugolukov/Global_Part2_ML_not_DL/Regression/Results/IntermediateData/Decision_Trees/Random_Forest/Part2_4/Initial_NotExpanded/dict_best_parameters_values_per_fold.pkl'
+                './ResultsIntermediateData/Decision_Trees/Random_Forest/Part2_4/Initial_NotExpanded/dict_best_parameters_values_per_fold.pkl'
             )
             new_key = f"fold_{fold_idx}"
             random_forest_hp__1 = dict_to_add[model][new_key]

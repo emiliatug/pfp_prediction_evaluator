@@ -599,7 +599,7 @@ def cv_per_model_rf(
         # If initializing script is script_1, then ignore the following logic
         if dict_assist == "Part4_of_5":
             dict_to_add = pd.read_pickle(
-                '/media/deep/DATA/PycharmProjects/Summer2024/FF_editing_transfer/E_Tugolukov/Global_Part2_ML_not_DL/Regression/Results/IntermediateData/Decision_Trees/Random_Forest/Part2_4/Initial_NotExpanded/dict_best_parameters_values_per_fold.pkl'
+                './ResultsIntermediateData/Decision_Trees/Random_Forest/Part2_4/Initial_NotExpanded/dict_best_parameters_values_per_fold.pkl'
                 )
             new_key = f"fold_{fold_idx}"
             random_forest_hp__1 = dict_to_add[model][new_key]
@@ -933,7 +933,7 @@ def cv_per_model_svr(
         if dict_assist == "Part4_of_5" and grid_search_status == "Grid-Search":
             organized_hyperparams_dict = deepcopy(original_organized_hyperparams_dict)
             dict_to_add = pd.read_pickle(
-                '/media/deep/DATA/PycharmProjects/Summer2024/FF_editing_transfer/E_Tugolukov/Global_Part2_ML_not_DL/Regression/Results/IntermediateData/012_SVR/rbf_svr/Part2_4/Initial_NotExpanded/dict_best_parameters_values_per_fold.pkl'
+                './ResultsIntermediateData/012_SVR/rbf_svr/Part2_4/Initial_NotExpanded/dict_best_parameters_values_per_fold.pkl'
                 )
             logger.info(
                 f"There are {len(organized_hyperparams_dict[model].keys())} in organized_hyperparams_dict with the GridSearch (sh2)")
