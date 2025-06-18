@@ -10,26 +10,21 @@ This page (Protein Function Prediction (PFP) Machine Learning Evaluation) implem
 ### Notes
 All the experiments were conducted using Five-Fold Cross Validation Datasets. The pipelines incorporated CPU-accelerated classical ML and Neural Networks. 
 I conducted a systematic exploration of network depth as a key hyperparameter, varying the number of hidden layers across three progressively broader search configurations:
-- **Small Search**
+- **Small Search**  
+  - Focused on shallow architectures to establish baseline performance and reduce training time  
+  - Optimizers explored: Adam, Adagrad, RMSprop  
+  - Hidden layers explored: 1, 2, 3, 4, 5, 6, 7, 8, 9
 
+- **Big Search**  
+  - Expanded the search space to include moderately deep networks, balancing model capacity and overfitting risk  
+  - Optimizers explored: Adam, Adagrad, RMSprop  
+  - Hidden layers explored: 1, 5, 10, 15, 20, 25
 
-- Focused on shallow architectures to establish baseline performance and reduce training time:
-- Optimizer explored: Adam,Adagrad,RMSprop
-- Hidden layers explored: 1,2,3,4,5,6,7,8,9
+- **Very Big Search**  
+  - A full-scale hyperparameter sweep designed to test the limits of network depth and investigate the effect of deep architectures on convergence, generalization, and training stability  
+  - Optimizers explored: SGD, Adam, Adagrad, RMSprop  
+  - Hidden layers explored: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50
 
-- **Big Search**
-
-
-- - Expanded the search space to include moderately deep networks, balancing model capacity and overfitting risk:
-- Optimizer explored: Adam,Adagrad,RMSprop
-- Hidden layers explored: 1,5,10,15,20,25
-
-- **Very Big Search**
-
-  
-- A full-scale hyperparameter sweep designed to test the limits of network depth and investigate the effect of deep architectures on convergence, generalization, and training stability:
-- Optimizer explored: SGD, Adam,Adagrad,RMSprop 
-- Hidden layers explored: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50
 
 For each configuration, additional hyperparameters (e.g.,  learning rate, dropout, batch normalization, and weight initialization) were held constant to isolate the effect of network depth.
 
