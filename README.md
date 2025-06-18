@@ -1,6 +1,31 @@
-# Protein Function Prediction ML Evaluation
+# Protein Function Prediction Machine Learning Evaluation
 
-This project implements supervised ML pipelines for regression tasks using CuML, FLAML, scikit-learn, and Keras to evaluate and improve Lin Score prediction accuracy, focusing on loss optimization and bin-wise error reduction.
+## Background
+This project (pfp_dataset_curator and pfp_prediction_evaluator) implements the full pipeline for generating, curating, and labeling protein dataset to evaluate the performance of the Protein Function Prediction (PFP) method developed by the Kihara Lab, (https://kiharalab.org/). 
+
+While traditionally protein functions have been determined experimentally. Since 1990s there has been a lot of progress in computational protein function prediction research. Normally the predictions are either evaluated on benchmark dataset, or through challenges, like [CAFA](https://biofunctionprediction.org/cafa/), where the organizers provide sequence data and different teams submit their predictions which are validated by organizers through experimental annotations.
+
+This page (Protein Function Prediction (PFP) Machine Learning Evaluation) implements supervised ML pipelines for regression tasks using CuML, FLAML, scikit-learn, and Keras to evaluate and improve Lin Score prediction accuracy, focusing on loss optimization and bin-wise error reduction in order to assess the accuracy of the PFP method through machine learning. 
+
+### Notes
+All the experiments were conducted using Five-Fold Cross Validation Datasets. The pipelines incorporated CPU-accelerated classical ML and Neural Networks. 
+I conducted a systematic exploration of network depth as a key hyperparameter, varying the number of hidden layers across three progressively broader search configurations:
+- **Small Search**
+Focused on shallow architectures to establish baseline performance and reduce training time:
+Optimizer explored: Adam,Adagrad,RMSprop
+Hidden layers explored: 1,2,3,4,5,6,7,8,9
+
+- **Big Search**
+Expanded the search space to include moderately deep networks, balancing model capacity and overfitting risk:
+Optimizer explored: Adam,Adagrad,RMSprop
+Hidden layers explored: 1,5,10,15,20,25
+
+- **Very Big Search**
+A full-scale hyperparameter sweep designed to test the limits of network depth and investigate the effect of deep architectures on convergence, generalization, and training stability:
+Optimizer explored: SGD, Adam,Adagrad,RMSprop 
+Hidden layers explored: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50
+
+For each configuration, additional hyperparameters (e.g.,  learning rate, dropout, batch normalization, and weight initialization) were held constant to isolate the effect of network depth.
 
 ## Environment
 
@@ -70,14 +95,14 @@ TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
 ./Scripts_bash/run_global2_linear_elasticnet2.sh > Log_files/Linear/stdout_stderr/global2_linear_elasticnet2_PostAlpSelect_stdout${TIMESTAMP}.log 2> Log_files/Linear/stdout_stderr/global2_linear_elasticnet2_PostAlpSelect_stderr${TIMESTAMP}.log
 ```
 
-### B. Decision Trees (Random Forest)
+### B. Decision Trees-based Random Forest
 
 ```bash
 ./Scripts_bash/run_global2_part4and5RF1.sh > Log_files/Decision_Trees/stdout_stderr/global2_part4and5RF_B_unweighted_no_Initial_NotExpanded_292iter_stdout_${TIMESTAMP}.log 2> Log_files/Decision_Trees/stdout_stderr/global2_part4and5RF_B_unweighted_no_Initial_NotExpanded_292iter_stderr_${TIMESTAMP}.log
 ./Scripts_bash/run_global2_part4and5RF2.sh > Log_files/Decision_Trees/stdout_stderr/global2_part4and5RF_B_unweighted_Expanded_292iter_stdout_${TIMESTAMP}.log 2> Log_files/Decision_Trees/stdout_stderr/global2_part4and5RF_B_unweighted_Expanded_292iter_stderr_${TIMESTAMP}.log
 ```
 
-### C. XGBoost with AutoML
+### C. Decision Trees-based XGBoost with AutoML
 
 ```bash
 # 1 hour
@@ -95,8 +120,6 @@ TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
 ```
 
 ### E. Neural Networks (NN)
-
-#### Very Big Search
 
 ```bash
 ./Scripts_bash/run_global2_NeuralNetwork_very_big_search_weighted_loss1.sh > Log_files/NN/stdout_stderr/global2_very_big_search_weighted_loss1_stdout.log 2> Log_files/NN/stdout_stderr/global2_very_big_search_weighted_loss1_stderr.log
@@ -137,3 +160,6 @@ Please contact:
 ```
 emiliatugol@gmail.com
 ```
+
+## How to cite this work
+Coming soon
