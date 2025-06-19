@@ -1,4 +1,4 @@
-# Protein Function Prediction Machine Learning Evaluation
+# Protein Function Prediction (PFP) Machine Learning Evaluation
 
 ## Background
 This project (pfp_dataset_curator and pfp_prediction_evaluator) implements the full pipeline for generating, curating, and labeling protein dataset to evaluate the performance of the Protein Function Prediction (PFP) method developed by the Kihara Lab, (https://kiharalab.org/). 
